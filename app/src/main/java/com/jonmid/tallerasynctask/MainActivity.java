@@ -66,10 +66,15 @@ public class MainActivity extends AppCompatActivity {
         if(myPost != null){
             for (Post post:myPost){
                 //texto.append(post.getTitle());
+                // para dar margen a linear layout desde codigo
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.setMargins(0,0,0,30);
+
                 TextView myText = new TextView(this);
                 myText.setText(post.getTitle());
                 myText.setTextColor(Color.WHITE);
                 myText.setBackgroundResource(R.color.colorAccent);
+                myText.setLayoutParams(params);
                 myLinear.addView(myText);
             }
         }
